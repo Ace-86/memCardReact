@@ -8,81 +8,81 @@ export const CardDatabase = [
     {
         id: 0,
         name: "Ace of Spades",
-        image: "random1",
+        image: "../images/acespade.png",
     },
     {
         id: 1,
         name: "Ace of Hearts",
-        image: "random2"
+        image: "../images/acehearts.png"
     },
     {
         id: 2,
         name: "Ace of Clubs",
-        image: "random3"
+        image: "../images/aceclubs.png"
     },
     {
         id: 3,
         name: "Ace of Diamonds",
-        image: "random4"
+        image: "../images/acediamonds.png"
     },
     {
         id: 4,
         name: "King of Spades",
-        image: "random5"
+        image: "../images/kingspade.jpeg"
     },
     {
         id: 5,
         name: "King of Hearts",
-        image: "random6"
+        image: "../images/kinghearts.jpeg"
     },
     {
         id: 6,
         name: "King of Clubs",
-        image: "random7"
+        image: "../images/kingclubs.jpeg"
     },
     {
         id: 7,
         name: "King of Diamonds",
-        image: "random8"
+        image: "../images/kingdiamonds.jpeg"
     },
     {
         id: 8,
         name: "Queen of Spades",
-        image: "random9"
+        image: "../images/queenspade.jpeg"
     },
     {
         id: 9,
         name: "Queen of Hearts",
-        image: "random10"
+        image: "../images/queenhearts.jpeg"
     },
     {
         id: 10,
         name: "Queen of Clubs",
-        image: "random11"
+        image: "../images/queenclubs.jpeg"
     },
     {
         id: 11,
         name: "Queen of Diamonds",
-        image: "random12"
+        image: "../images/queendiamonds.jpeg"
     },
     {
         id: 12,
         name: "Jack of Spades",
-        image: "random13",
+        image: "../images/jackspades.jpeg",
     },
     {
         id: 13,
         name: "Jack of Hearts",
-        image: "random14"
+        image: "../images/jackhearts.jpeg"
     },
     {
         id: 14,
         name: "Jack of Clubs",
-        image: "random15"
+        image: "../images/jackclubs.jpeg"
     },
     {
         id: 15,
         name: "Jack of Diamonds",
-        image: "random16"
+        image: "../images/jackdiamonds.jpeg"
     }
 ]
