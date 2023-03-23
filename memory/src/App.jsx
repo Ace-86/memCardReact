@@ -4,9 +4,9 @@ import GameBoard from './components/gameboard';
 
 function App() {
   return (
-    <p>
+    <div>
       <GameBoard />
-    </p>
+    </div>
   );
 }
 
