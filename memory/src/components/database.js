@@ -3,85 +3,83 @@ import React from "react";
 
 export const CardDatabase = [
 
-    
-
     {
-        id: 0,
+        keyId: 0,
         name: "Ace of Spades",
-        image: "../images/acespade.png",
+        image: "../images/acespade.png"
     },
     {
-        id: 1,
+        keyId: 1,
         name: "Ace of Hearts",
         image: "../images/acehearts.png"
     },
     {
-        id: 2,
+        keyId: 2,
         name: "Ace of Clubs",
         image: "../images/aceclubs.png"
     },
     {
-        id: 3,
+        keyId: 3,
         name: "Ace of Diamonds",
         image: "../images/acediamonds.png"
     },
     {
-        id: 4,
+        keyId: 4,
         name: "King of Spades",
         image: "../images/kingspade.jpeg"
     },
     {
-        id: 5,
+        keyId: 5,
         name: "King of Hearts",
         image: "../images/kinghearts.jpeg"
     },
     {
-        id: 6,
+        keyId: 6,
         name: "King of Clubs",
         image: "../images/kingclubs.jpeg"
     },
     {
-        id: 7,
+        keyId: 7,
         name: "King of Diamonds",
         image: "../images/kingdiamonds.jpeg"
     },
     {
-        id: 8,
+        keyId: 8,
         name: "Queen of Spades",
         image: "../images/queenspade.jpeg"
     },
     {
-        id: 9,
+        keyId: 9,
         name: "Queen of Hearts",
         image: "../images/queenhearts.jpeg"
     },
     {
-        id: 10,
+        keyId: 10,
         name: "Queen of Clubs",
         image: "../images/queenclubs.jpeg"
     },
     {
-        id: 11,
+        keyId: 11,
         name: "Queen of Diamonds",
         image: "../images/queendiamonds.jpeg"
     },
     {
-        id: 12,
+        keyId: 12,
         name: "Jack of Spades",
         image: "../images/jackspades.jpeg",
     },
     {
-        id: 13,
+        keyId: 13,
         name: "Jack of Hearts",
         image: "../images/jackhearts.jpeg"
     },
     {
-        id: 14,
+        keyId: 14,
         name: "Jack of Clubs",
         image: "../images/jackclubs.jpeg"
     },
     {
-        id: 15,
+        keyId: 15,
         name: "Jack of Diamonds",
         image: "../images/jackdiamonds.jpeg"
     }
