@@ -12,6 +12,9 @@ font-size: 1rem;
 border: 1px solid red;
 align-items: center;
 justify-items: center;
+padding: 10px;
+gap: 20px;
+margin: 20px;
 `
 const ImageLink = Styled.img`
     align-self: center;
@@ -22,11 +25,13 @@ const ImageLink = Styled.img`
 const TextWrap = Styled.h1`
     display: flex;
     flex-direction: row;
-    align-self: center;
-    justify-self: center;
-    width: 25%;
+    align-items: center;
+    justify-items: center;
+    width: 50%;
     height: 25%;
-    color: blue;
+    color: black;
+    border: 1px solid blue;
+    font-size: 20px;
 `
 
 ///reusable card layout
