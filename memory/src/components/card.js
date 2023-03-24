@@ -3,22 +3,29 @@ import Styled from "styled-components";
 
 const CardSquare = Styled.div `
 display: flex;
-align-content: center;
+flex-direction: column;
 width: 200px;
 height: 250px;
-background-color: red;
+background-color: grey;
 font-weight: 300;
 font-size: 1rem;
 border: 1px solid red;
+align-items: center;
+justify-items: center;
 `
 const ImageLink = Styled.img`
     align-self: center;
+    justify-self: center;
     width: 30%;
     height 30%;
 `
 const TextWrap = Styled.h1`
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
+    width: 25%;
+    height: 25%;
     color: blue;
 `
 
