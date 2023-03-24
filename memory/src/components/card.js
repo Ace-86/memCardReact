@@ -1,5 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
+
 const CardSquare = Styled.div `
 display: flex;
 align-content: center;
@@ -20,13 +21,14 @@ const TextWrap = Styled.h1`
     height: 100%;
     color: blue;
 `
+
 ///reusable card layout
 export default function CardTemplate({name, 
-    imageLink}) {
+    image, keyId}) {
         
     return (
-        <CardSquare className="cardContainer">
-            <ImageLink src= {imageLink} alt={name} />
+        <CardSquare key={keyId} className="cardContainer">
+            <ImageLink src= {image} alt={name} />
             <TextWrap> {name} </TextWrap>
         </CardSquare>
     )
