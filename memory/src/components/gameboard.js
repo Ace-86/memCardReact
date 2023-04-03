@@ -1,5 +1,7 @@
 import React from "react";
-import CardTemplate from "./card";
+import ShuffleCards from './shuffle';
+
+
 import Styled from "styled-components";
 import GameButton from "./button";
 import { CardDatabase } from "./database";
@@ -16,7 +18,8 @@ flex-direction: row;
 `
 
 export default function GameBoard() {
-  
+  //import randomly shuffled card (array) and display 
+  //play button should reset rounds, randomize cards again
   const data = CardDatabase;
 
   console.log(data);
@@ -24,32 +27,8 @@ export default function GameBoard() {
   return (
         <GameLayout className="game-board-layout">
             <CardLayout>
-                
-                <CardTemplate 
-                name= {data[0].name}
-                image= {data[0].image}
-                />
-
-                <CardTemplate 
-                name= {data[1].name}
-                image= {data[1].image}
-                />
-
-                <CardTemplate 
-                name= {data[5].name}
-                image= {data[5].image}
-                />
-
-                <CardTemplate 
-                name= {data[8].name}
-                image= {data[8].image}
-                />
-
-                <CardTemplate 
-                name= {data[14].name}
-                image= {data[14].image}
-                />
-
+                <ShuffleCards/>
+           
             </CardLayout>
             <GameButton 
                 title="Play"
