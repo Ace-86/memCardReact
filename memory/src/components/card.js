@@ -1,6 +1,7 @@
 import React from "react";
 import Styled from "styled-components";
 
+
 const CardSquare = Styled.div `
 display: flex;
 flex-direction: column;
@@ -9,12 +10,12 @@ height: 250px;
 background-color: grey;
 font-weight: 300;
 font-size: 1rem;
-border: 1px solid red;
 align-items: center;
 justify-items: center;
 padding: 10px;
 gap: 20px;
 margin: 20px;
+border: 2px solid red;
 `
 const ImageLink = Styled.img`
     align-self: center;
