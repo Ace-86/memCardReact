@@ -6,7 +6,13 @@ import Styled from 'styled-components';
 const ShuffleLayout = Styled.div`
     display: flex;
     flex-direction: row;
-  
+`
+
+const Container = Styled.div `
+  display: flex;
+  flex-direction: column;
+  justify-contents: center;
+  align-items: center;
 `
 
 const ShuffleCards = () => {
@@ -24,7 +30,7 @@ const ShuffleCards = () => {
     };
   
     return (
-      <container>
+      <Container>
         <ShuffleLayout>
           {items.map((item) => (
               <CardTemplate 
@@ -35,7 +41,7 @@ const ShuffleCards = () => {
               ))}
         </ShuffleLayout>
               <button onClick={getShuffleCards}>Shuffle</button>
-      </container>
+      </Container>
     );
   };
   
