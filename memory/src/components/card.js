@@ -18,7 +18,7 @@ const CardSquare = Styled.div `
     transition: background-color 0.2s ease;
     
     &.selected {
-        background-color: lightblue;
+        background-color: gold;
     }
 `
 
