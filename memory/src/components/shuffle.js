@@ -3,6 +3,8 @@ import CardTemplate from "./card";
 import { CardDatabase } from "./database";
 import Styled from 'styled-components';
 
+//begin round 1
+
 const ShuffleLayout = Styled.div`
     display: flex;
     flex-direction: row;
@@ -14,6 +16,9 @@ const Container = Styled.div `
   justify-contents: center;
   align-items: center;
 `
+//selects 5 cards randomly from database and displays them on click; each click will randomly shuffle cards
+
+//turn this into a begin round function
 
 const ShuffleCards = () => {
     const [items, setItems] = useState([]);
@@ -45,4 +50,4 @@ const ShuffleCards = () => {
     );
   };
   
-  export default ShuffleCards;
+  export default ShuffleCards ;
