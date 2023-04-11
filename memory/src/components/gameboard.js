@@ -30,11 +30,6 @@ export default function GameBoard() {
                 <ShuffleCards/>
            
             </CardLayout>
-            <GameButton 
-                title="Play"
-                key= "StartId"
-                round="1"
-            />
         </GameLayout>
     )
 }
