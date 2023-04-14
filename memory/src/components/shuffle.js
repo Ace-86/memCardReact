@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import CardTemplate from "./card";
 import { CardDatabase } from "./database";
 import Styled from 'styled-components';
@@ -33,7 +33,13 @@ const ShuffleCards = () => {
       }
       setItems(ShuffleCards);
     };
-  
+    
+    // on page start the game will load 5 random cards from database
+
+    useEffect(() => {
+    getShuffleCards()
+    }, []);
+
     return (
       <Container>
         <ShuffleLayout>
@@ -45,9 +51,9 @@ const ShuffleCards = () => {
               />
               ))}
         </ShuffleLayout>
-              <button onClick={getShuffleCards}>Shuffle</button>
+              {/* <button onClick={getShuffleCards}>Shuffle</button> */}
       </Container>
     );
   };
   
-  export default ShuffleCards ;
+  export default ShuffleCards;
