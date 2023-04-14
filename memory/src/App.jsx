@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import GameBoard from './components/gameboard';
+import Board from './components/Gameboard';
 import Styled from 'styled-components';
 
 const MainLayout = Styled.div`
@@ -20,7 +20,7 @@ const MainLayout = Styled.div`
 function App() {
   return (
     <MainLayout>
-      <GameBoard />
+      <Board />
     </MainLayout>
   );
 }
