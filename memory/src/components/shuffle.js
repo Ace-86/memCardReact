@@ -3,57 +3,97 @@ import CardTemplate from "./card";
 import { CardDatabase } from "./database";
 import Styled from 'styled-components';
 
-//begin round 1
-
 const ShuffleLayout = Styled.div`
     display: flex;
     flex-direction: row;
-`
+`;
 
 const Container = Styled.div `
   display: flex;
   flex-direction: column;
   justify-contents: center;
   align-items: center;
-`
-//selects 5 cards randomly from database and displays them on click; each click will randomly shuffle cards
+`;
 
-//turn this into a begin round function
+const BeginRound = () => {
+  const [items, setItems] = useState([]);
 
-const ShuffleCards = () => {
-    const [items, setItems] = useState([]);
-  
-    const getShuffleCards = () => {
-      const ShuffleCards = [];
-      const cloneData = [...CardDatabase];
-      for (let i = 0; i < 5; i++) {
-        const randomSelection = Math.floor(Math.random() * cloneData.length);
-        ShuffleCards.push(cloneData[randomSelection]);
-        cloneData.splice(randomSelection, 1);
-      }
-      setItems(ShuffleCards);
-    };
+  //keeps track of selected cards
+  const [selectedCards, setSelectedCards] = useState([]);
+
+  const [gameOver, setGameOver] = useState(false);
+
+  const getShuffleCards = () => {
+    const shuffleCards = [];
+    const cloneData = [...CardDatabase];
+    for (let i = 0; i < 5; i++) {
+      const randomSelection = Math.floor(Math.random() * cloneData.length);
+      shuffleCards.push(cloneData[randomSelection]);
+      cloneData.splice(randomSelection, 1);
+    }
+    setItems(shuffleCards);
+  };
+
+  //if selected card is chosen 2x then game ends
+  const handleCardSelection = (selectedCard) => {
+    if (selectedCards.includes(selectedCard)) {
+      setGameOver(true);
+      return;
+    }
     
-    // on page start the game will load 5 random cards from database
+    const updatedSelectedCards = [...selectedCards, selectedCard];
+    setSelectedCards(updatedSelectedCards);
+    
 
-    useEffect(() => {
-    getShuffleCards()
-    }, []);
+    if (updatedSelectedCards.length === items.length) {
+      //restarts game
+      getShuffleCards();
+      setSelectedCards([]);
+    } else {
+      //otherwise, adds cards to new array of selected cards  
+      const newItems = [...items];
+      let currentIndex = newItems.length;
+      let randomIndex;
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [newItems[currentIndex], newItems[randomIndex]] = [newItems[randomIndex], newItems[currentIndex]];
+      }
+      setItems(newItems);
+    }
+  };
 
-    return (
-      <Container>
+  const resetGame = () => {
+    getShuffleCards();
+    setSelectedCards([])
+    setGameOver(false)
+  }
+
+  useEffect(() => {
+    getShuffleCards();
+  }, []);
+
+  return (
+    <Container>
+      {gameOver ? (
+        <div> Game Over
+          <button onClick={resetGame}> Restart </button>
+          </div>
+       
+      ) : (
         <ShuffleLayout>
           {items.map((item) => (
-              <CardTemplate 
+            <CardTemplate 
               key={item.keyId}
-              name= {item.name}
-              image ={item.image}
-              />
-              ))}
+              name={item.name}
+              image={item.image}
+              onSelect={() => handleCardSelection(item.keyId)}
+            />
+          ))}
         </ShuffleLayout>
-              {/* <button onClick={getShuffleCards}>Shuffle</button> */}
-      </Container>
-    );
-  };
-  
-  export default ShuffleCards;
+      )}
+    </Container>
+  );
+};
+
+export default BeginRound;
