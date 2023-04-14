@@ -41,11 +41,12 @@ const TextWrap = Styled.h1`
     font-size: 20px;
 `
 
-export default function CardTemplate({name, image, keyId}) {
+export default function CardTemplate({name, image, keyId, onSelect}) {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleCardClick = () => {
-        setIsSelected(!isSelected);
+        setIsSelected(true);
+        onSelect && onSelect(keyId);
     };
 
     return (
