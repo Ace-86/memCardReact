@@ -16,9 +16,8 @@ const Container = Styled.div `
 `;
 
 const BeginRound = () => {
+  //keeps track of selected cards, displayed itemsm score, rounds and gameOver status
   const [items, setItems] = useState([]);
-
-  //keeps track of selected cards
   const [selectedCards, setSelectedCards] = useState([]);
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(1);
@@ -28,6 +27,7 @@ const BeginRound = () => {
     const shuffleCards = [];
     const cloneData = [...CardDatabase];
     for (let i = 0; i < 5; i++) {
+      //randomizes selection from card database; only picks 5 (add later: increase each round)
       const randomSelection = Math.floor(Math.random() * cloneData.length);
       shuffleCards.push(cloneData[randomSelection]);
       cloneData.splice(randomSelection, 1);
@@ -35,21 +35,20 @@ const BeginRound = () => {
     setItems(shuffleCards);
   };
 
-  //if selected card is chosen 2x then game ends
   const handleCardSelection = (selectedCard) => {
+    //if selected card is already in Array of picked cards: GameOver
     if (selectedCards.includes(selectedCard)) {
       setGameOver(true);
       return;
     } else {
+      //everytime a card is selected, you should gain 1 point;score does not reset each round
       setScore(score+1)
     }
-    
+    //the array of previous selected cards plus current selected card
     const updatedSelectedCards = [...selectedCards, selectedCard];
     setSelectedCards(updatedSelectedCards);
-    
-
     if (updatedSelectedCards.length === items.length) {
-      //restarts game
+      //if round ends, increase round + 1, reset selected cards (empty out array), and shuffle cards in new cards from database
       getShuffleCards();
       setSelectedCards([]);
       setRound(round + 1);
