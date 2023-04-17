@@ -104,3 +104,9 @@ const BeginRound = () => {
 };
 
 export default BeginRound;
+
+//to do: 
+//best score (using localStorage), adding cards when certain rounds increase (difficulty+), 
+//removing text after certain rounds (difficulty+), add timer, create stylish UI,
+// add instructions to bottom (modal preferred), Title, 
+//transitions between rounds (even simple color change in number for round)
