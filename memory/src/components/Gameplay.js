@@ -20,7 +20,8 @@ const BeginRound = () => {
 
   //keeps track of selected cards
   const [selectedCards, setSelectedCards] = useState([]);
-
+  const [score, setScore] = useState(0);
+  const [round, setRound] = useState(1);
   const [gameOver, setGameOver] = useState(false);
 
   const getShuffleCards = () => {
@@ -39,6 +40,8 @@ const BeginRound = () => {
     if (selectedCards.includes(selectedCard)) {
       setGameOver(true);
       return;
+    } else {
+      setScore(score+1)
     }
     
     const updatedSelectedCards = [...selectedCards, selectedCard];
@@ -75,6 +78,8 @@ const BeginRound = () => {
 
   return (
     <Container>
+      <div>Current Round: {round}</div>
+      <div>Score: {score}</div>
       {gameOver ? (
         <div> Game Over
           <button onClick={resetGame}> Restart </button>
