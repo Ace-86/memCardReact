@@ -69,6 +69,8 @@ const BeginRound = () => {
   const resetGame = () => {
     getShuffleCards();
     setSelectedCards([])
+    setScore(0);
+    setRound(1);
     setGameOver(false)
   }
 
