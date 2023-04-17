@@ -52,6 +52,7 @@ const BeginRound = () => {
       //restarts game
       getShuffleCards();
       setSelectedCards([]);
+      setRound(round + 1);
     } else {
       //otherwise, adds cards to new array of selected cards  
       const newItems = [...items];
