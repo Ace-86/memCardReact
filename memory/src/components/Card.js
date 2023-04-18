@@ -15,25 +15,25 @@ const CardSquare = Styled.div `
     gap: 20px;
     margin: 20px;
     border: 2px solid red;
+
    
 `
 
 const ImageLink = Styled.img`
     align-self: center;
     justify-self: center;
-    width: 30%;
-    height: 30%;
+    width: 80%;
+    height: 80%;
 `
 
 const TextWrap = Styled.h1`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-items: center;
-    width: 50%;
-    height: 25%;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
     color: black;
-    border: 1px solid blue;
     font-size: 20px;
 `
 
