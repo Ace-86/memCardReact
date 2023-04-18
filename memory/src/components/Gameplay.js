@@ -89,7 +89,11 @@ const BeginRound = () => {
 setItems(newItems);
 }
 };
-
+//manually clears out best scores (probably  will make this an admin function only)
+const clearLocalStorage = () => {
+  localStorage.clear();
+  setBestScores([]);
+};
 
 //reset function for button at end of game
 const resetGame = () => {
@@ -145,6 +149,7 @@ return <li key={index}>{bestScore.name} - {bestScore.score}</li>
           ))}
         </ShuffleLayout>
       )}
+      <button onClick={clearLocalStorage}>Clear Local Storage</button>
 </Container>
 );
 };
