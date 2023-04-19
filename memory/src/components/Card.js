@@ -6,7 +6,6 @@ const CardSquare = Styled.div `
     flex-direction: column;
     width: 200px;
     height: 250px;
-    background-color: grey;
     font-weight: 300;
     font-size: 1rem;
     align-items: center;
@@ -36,7 +35,7 @@ const TextWrap = Styled.h1`
     justify-content: center;
     width: 100%;
     height: 20%;
-    color: black;
+    color: white;
     font-size: 20px;
 `
 
