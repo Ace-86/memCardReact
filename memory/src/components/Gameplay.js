@@ -3,9 +3,18 @@ import CardTemplate from "./Card";
 import { CardDatabase } from "./Database";
 import Styled from 'styled-components';
 
+
 const ShuffleLayout = Styled.div`
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+`;
+
+const TopContain = Styled.div`
+  display: flex;
+  border: 1px solid red;
+  width: 100%;
+  left: 0;
+  right: 0;
 `;
 
 const Container = Styled.div `
@@ -13,6 +22,22 @@ const Container = Styled.div `
   flex-direction: column;
   justify-contents: center;
   align-items: center;
+  border: 1px solid blue;
+  width: 100vw;
+  left: 0;
+  right: 0;
+`;
+
+const RightContainer = Styled.div`
+  display: flex;
+  justify-self: end;
+  align-self: end;
+  gap: 50px;
+`;
+
+const LeftContainer = Styled.div`
+  display: flex;
+  align-self: start;
 `;
 
 const BeginRound = () => {
@@ -44,7 +69,7 @@ const BeginRound = () => {
       const newBestScore = {name: "", score: score};
       let isHighScore = false;
       if (bestScores.length < 3 || score > bestScores[2].score) {
-        //only add name to newBestScore if score is high enough to make the top 3
+        //only adds name to newBestScore if score is high enough to make the top 3
         newBestScore.name = prompt("Congratulations! You achieved a new high score. Please enter your name:");
         isHighScore = true;
       }
@@ -119,9 +144,9 @@ setBestScores(storedBestScores);
 
 return (
 <Container>
-<h1>Card Memory Game</h1>
-<h2>Round: {round}</h2>
-<h2>Score: {score}</h2>
+
+<TopContain>
+<LeftContainer> 
 {bestScores.length > 0 &&
 <div>
 <h2>Best Scores:</h2>
@@ -132,6 +157,14 @@ return <li key={index}>{bestScore.name} - {bestScore.score}</li>
 </ol>
 </div>
 }
+</LeftContainer>
+<RightContainer>
+<h2>Round: {round}</h2>
+<h2>Score: {score}</h2>
+</RightContainer>
+</TopContain>
+
+<h1>Card Memory Game</h1>
 {gameOver ? (
         <div> Game Over
           <button onClick={resetGame}> Restart </button>
@@ -157,7 +190,7 @@ return <li key={index}>{bestScore.name} - {bestScore.score}</li>
 export default BeginRound;
 
 //to do: 
-//best score (using localStorage), adding cards when certain rounds increase (difficulty+), 
+//adding cards when certain rounds increase (difficulty+), 
 //removing text after certain rounds (difficulty+), add timer, create stylish UI,
 // add instructions to bottom (modal preferred), Title, 
 //transitions between rounds (even simple color change in number for round)
