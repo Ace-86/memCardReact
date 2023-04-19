@@ -14,7 +14,6 @@ const CardSquare = Styled.div `
     padding: 10px;
     gap: 20px;
     margin: 20px;
-    border: 2px solid red;
     transition: box-shadow 0.3s ease-in-out;
 
     &:hover {
