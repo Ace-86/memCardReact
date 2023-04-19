@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Board from './components/Gameboard';
 import Styled from 'styled-components';
+import background from './img/felt.jpg'
 
 const MainLayout = Styled.div`
     display: flex;
     flex-direction: row;
-    background-color: grey;
+    background-image: url(${background});
     min-width: 100%;
     min-height: 100%;
     position: absolute;
