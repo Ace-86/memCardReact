@@ -11,7 +11,7 @@ const ShuffleLayout = Styled.div`
 
 const TopContain = Styled.div`
   display: flex;
-  border: 1px solid red;
+  justify-content: space-around;
   width: 100%;
   left: 0;
   right: 0;
@@ -22,7 +22,6 @@ const Container = Styled.div `
   flex-direction: column;
   justify-contents: center;
   align-items: center;
-  border: 1px solid blue;
   width: 100vw;
   left: 0;
   right: 0;
@@ -32,12 +31,15 @@ const RightContainer = Styled.div`
   display: flex;
   justify-self: end;
   align-self: end;
-  gap: 50px;
+  gap: 100px;
+  color: white;
 `;
 
 const LeftContainer = Styled.div`
   display: flex;
   align-self: start;
+  color: white;
+  
 `;
 
 const BeginRound = () => {
@@ -70,7 +72,7 @@ const BeginRound = () => {
       let isHighScore = false;
       if (bestScores.length < 3 || score > bestScores[2].score) {
         //only adds name to newBestScore if score is high enough to make the top 3
-        newBestScore.name = prompt("Congratulations! You achieved a new high score. Please enter your name:");
+        newBestScore.name = prompt("You achieved a new high score. Please enter your name:");
         isHighScore = true;
       }
       //update bestScores array
@@ -144,8 +146,9 @@ setBestScores(storedBestScores);
 
 return (
 <Container>
-
+{/* contains top scores and current scores/rounds */}
 <TopContain>
+{/* top scores */}
 <LeftContainer> 
 {bestScores.length > 0 &&
 <div>
@@ -158,12 +161,14 @@ return <li key={index}>{bestScore.name} - {bestScore.score}</li>
 </div>
 }
 </LeftContainer>
+{/* current scores/current round */}
 <RightContainer>
 <h2>Round: {round}</h2>
 <h2>Score: {score}</h2>
 </RightContainer>
 </TopContain>
 
+{/* actual gameplay/ gameover screen & current gameboard */}
 <h1>Card Memory Game</h1>
 {gameOver ? (
         <div> Game Over
@@ -182,6 +187,7 @@ return <li key={index}>{bestScore.name} - {bestScore.score}</li>
           ))}
         </ShuffleLayout>
       )}
+      {/* persistant clear local storage button */}
       <button onClick={clearLocalStorage}>Clear Local Storage</button>
 </Container>
 );
