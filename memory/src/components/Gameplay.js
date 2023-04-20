@@ -1,46 +1,8 @@
 import React, {useState, useEffect} from "react";
 import CardTemplate from "./Card";
 import { CardDatabase } from "./Database";
-import Styled from 'styled-components';
-
-
-const ShuffleLayout = Styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const TopContain = Styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  left: 0;
-  right: 0;
-`;
-
-const Container = Styled.div `
-  display: flex;
-  flex-direction: column;
-  justify-contents: center;
-  align-items: center;
-  width: 100vw;
-  left: 0;
-  right: 0;
-`;
-
-const RightContainer = Styled.div`
-  display: flex;
-  justify-self: end;
-  align-self: end;
-  gap: 100px;
-  color: white;
-`;
-
-const LeftContainer = Styled.div`
-  display: flex;
-  align-self: start;
-  color: white;
-  
-`;
+import { ShuffleLayout, Container } from "./Style";
+import Top from "./Top";
 
 const BeginRound = () => {
   //keeps track of selected cards, displayed itemsm score, rounds, and gameOver status
@@ -147,26 +109,7 @@ setBestScores(storedBestScores);
 return (
 <Container>
 {/* contains top scores and current scores/rounds */}
-<TopContain>
-{/* top scores */}
-<LeftContainer> 
-{bestScores.length > 0 &&
-<div>
-<h2>Best Scores:</h2>
-<ol>
-{bestScores.map((bestScore, index) => {
-return <li key={index}>{bestScore.name} - {bestScore.score}</li>
-})}
-</ol>
-</div>
-}
-</LeftContainer>
-{/* current scores/current round */}
-<RightContainer>
-<h2>Round: {round}</h2>
-<h2>Score: {score}</h2>
-</RightContainer>
-</TopContain>
+<Top bestScores={bestScores} round={round} score={score} />
 
 {/* actual gameplay/ gameover screen & current gameboard */}
 <h1>Card Memory Game</h1>
@@ -194,9 +137,3 @@ return <li key={index}>{bestScore.name} - {bestScore.score}</li>
 };
 
 export default BeginRound;
-
-//to do: 
-//adding cards when certain rounds increase (difficulty+), 
-//removing text after certain rounds (difficulty+), add timer, create stylish UI,
-// add instructions to bottom (modal preferred), Title, 
-//transitions between rounds (even simple color change in number for round)
