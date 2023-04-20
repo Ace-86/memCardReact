@@ -1,16 +1,9 @@
 import React from 'react';
 import './App.css';
 import Board from './components/Gameboard';
-import Styled from 'styled-components';
+import Styled from "styled-components";
 import background from './img/felt.jpg'
 
-const Background = Styled.div `
-
-height: 100%;
-
-top: 0;
-left: 0;
-`
 const MainLayout = Styled.div`
     display: flex;
     flex-direction: row;
@@ -23,18 +16,13 @@ const MainLayout = Styled.div`
     top: 0;
     align-items: center;
     justify-content: center;
-
 `
 
 function App() {
   return (
-    // <Background>
-
-    <MainLayout>
+    <MainLayout >
       <Board />
-    </MainLayout>
-      
-    // </Background>
+    </MainLayout>      
   );
 }
 
