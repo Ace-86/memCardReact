@@ -3,6 +3,7 @@ import CardTemplate from "./Card";
 import { CardDatabase } from "./Database";
 import { ShuffleLayout, Container } from "./Style";
 import Top from "./Top";
+import GamesOver from "./Gameover";
 
 const BeginRound = () => {
   //keeps track of selected cards, displayed itemsm score, rounds, and gameOver status
@@ -110,15 +111,8 @@ return (
 <Container>
 {/* contains top scores and current scores/rounds */}
 <Top bestScores={bestScores} round={round} score={score} />
-
-{/* actual gameplay/ gameover screen & current gameboard */}
 <h1>Card Memory Game</h1>
-{gameOver ? (
-        <div> Game Over
-          <button onClick={resetGame}> Restart </button>
-          </div>
-       
-      ) : (
+{gameOver ? <GamesOver resetGame={resetGame} /> : (
         <ShuffleLayout>
           {items.map((item) => (
             <CardTemplate 
